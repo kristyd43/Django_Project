@@ -52,3 +52,9 @@ a {
 a, p {
     font-family: monospace;
 }
+
+#She_Codes_News {
+    justify-content: center;
+    color: palevioletred;
+    @import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@700&display=swap');
+}

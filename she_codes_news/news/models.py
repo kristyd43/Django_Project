@@ -1,8 +1,15 @@
 from django.db import models
+from django.contrib.auth import get_user_model
 
 
 class NewsStory(models.Model):
     title = models.CharField(max_length=200)
-    author = models.CharField(max_length=200)
+    author = models.ForeignKey(
+        get_user_model(),
+        on_delete = models.CASCADE
+    )
     pub_date = models.DateTimeField()
     content = models.TextField()
+    img_url = models.URLField(default = 'https://place-puppy.com/300x300')
+
+NewsStory.objects.filter().order_by("pub_date")
