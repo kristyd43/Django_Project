@@ -5,23 +5,34 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title id="She_Codes_News">She Codes News</title>
+        <title >She Codes News</title>
         <meta name="description" content="">
         <meta name="author" content="Kristy Davidson">
-        <link href="https://fonts.googleapis.com/css?family=Manjari&display=swap" rel="stylesheet">
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500&display=swap');
+        </style>
         <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
         {% block stylesheet %}{% endblock %}
     </head>
+<style>
 
+</style>
     <body>
         <header>
             <div id="header-text">
                 <a id="header-link" href="{% url 'news:index' %}">
-                    <h1 id="She_Codes_News">She {Codes} News</h1>
+                    <h1>
+                    She <div id="Code_Emphasis">{Codes} </div> News</h1>
                 </a>
             </div>
+            
             <!-- include nav here -->
             {% include './nav.html' %}
+            <form class="add_your_class" method="GET" action="" >
+                <input class="add_your_class" type="search" name="search"> 
+                <button class="add_your_class" type="submit"> Search </button>
+            </form>
         </header>
 
         <!-- content blocks here -->

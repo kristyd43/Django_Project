@@ -11,5 +11,3 @@ class NewsStory(models.Model):
     pub_date = models.DateTimeField()
     content = models.TextField()
     img_url = models.URLField(default = 'https://place-puppy.com/300x300')
-
-NewsStory.objects.filter().order_by("pub_date")

@@ -18,12 +18,15 @@ class IndexView(generic.ListView):
         return NewsStory.objects.all()
 
     def get_context_data(self, **kwargs):
-        print(self.request.Get.get('search'))
-        search_var = self.request.Get.get('search')
+        print("here2")
+        print(self.request.GET.get('search'))
+        search_var = self.request.GET.get('search', "")
         context = super().get_context_data(**kwargs)
-        context['latest_stories'] = NewsStory.objects.filter(title_contains=search_var)
-        context['all_stories'] = NewsStory.objects.order_by('-pub_date').filter(title_contains=search_var)[3:]
+        context['latest_stories'] = NewsStory.objects.filter(title__contains=search_var)[:3]
+        context['all_stories'] = NewsStory.objects.order_by('-pub_date').filter(title__contains=search_var)[3:]
+        
         return context
+
         
 
 class StoryView(generic.DetailView):
